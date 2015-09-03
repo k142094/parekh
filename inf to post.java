@@ -12,7 +12,7 @@ public class Main
 		{
 			if(infix[i]=='('||infix[i]==')'||infix[i]=='a'||infix[i]=='b'||infix[i]=='c'||infix[i]=='d')
 			{
-				postfix=postfix+" ";
+				postfix=postfix+".";
 				if(operators.empty()||(char)operators.peek()=='(')
 				{
 					operators.push(infix[i]);
@@ -22,7 +22,7 @@ public class Main
 					{
 						while((char)operators.peek()!='(')
 						{
-							postfix=postfix+(char)operators.pop()+' ';
+							postfix=postfix+(char)operators.pop()+'.';
 						}
 						operators.pop();
 					}
@@ -34,7 +34,7 @@ public class Main
 						else{
 							while(infix[i]<(char)operators.peek())
 							{
-								postfix=postfix+(char)operators.pop()+' ';
+								postfix=postfix+(char)operators.pop()+'.';
 							}
 							operators.push(infix[i]);
 						}
@@ -45,10 +45,14 @@ public class Main
 				postfix=postfix+infix[i];
 			}
 		}
+		postfix=postfix+"."
 		while(!operators.empty())
 		{
-				postfix=postfix+(char)operators.pop()+' ';
+				postfix=postfix+(char)operators.pop()+'.';
 		}
 		System.out.println(postfix);
+		
+		
 	}
+	
 }
